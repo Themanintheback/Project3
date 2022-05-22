@@ -9,11 +9,18 @@ class The_Board:
         self.board = board
 
     def get_letters_to_numbers():
+        """
+        converts letters in a list of numbers
+        """
         letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5,
                               "G": 6, "H": 7}
         return letters_to_numbers
 
     def print_board(self):
+        """
+        creates 1 row then loops through the board
+        (which will be 8 times) adding a pipe separator (|)
+        """
         print(" A B C D E F G H")
         print(" +-+-+-+-+-+-+-+")
         row_number = 1
@@ -27,16 +34,25 @@ class The_Battleship:
         self.board = board
 
     def create_ships(self):
+        """
+        creates the ships and positions them on the board
+        """
         for i in range(5):
+            # get the row and column then randomize the ships location on the board 
             self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
+            # loop will check if a ship has already been placed there. If so will rerandomize
             while self.board[self.x_row][self.y_column] == "X":
                 self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
             self.board[self.x_row][self.y_column] = "X"
         return self.board
 
     def The_user_input(self):
+        """
+        The functions get user input (row number and column letter) 
+        """
         try:
             x_row = input("Enter the row  of the ship: ")
+            # 
             while x_row not in '12345678':
                 print('inappropriate choice, please select a valid row')
                 x_row = input('Enter  the row  of the ships: ')
