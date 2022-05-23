@@ -52,14 +52,19 @@ class The_Battleship:
         """
         try:
             x_row = input("Enter the row  of the ship: ")
-            # 
+            # checks for numbers 1 - 8
             while x_row not in '12345678':
+                # If invalid will print:
                 print('inappropriate choice, please select a valid row')
+                # Then ask for x_row input again
                 x_row = input('Enter  the row  of the ships: ')
 
             y_column = input("Enter the column letter of the ship: ").upper()
+            # checks for letters A - H
             while y_column not in "ABCDEFGH":
+                # If invalid will print:
                 print('inappropriate choice, please select a valid column')
+                # Then ask for y_column input again
                 y_column = input("Enter the column letter of the ships:"
                                  ).upper()
             return int(x_row) - 1, The_Board.get_letters_to_numbers()[y_column]
@@ -68,15 +73,24 @@ class The_Battleship:
             return self.The_user_input()
 
     def ship_hit_count(self):
+        """
+        This fuction looks for "X" on the board
+        """
         hit_ships = 0
+        # Loops through The_Board
         for row in self.board:
+            # Then loops through column and row 
             for column in row:
                 if column == "X":
+                    # if "X" found adds 1 to hit count
                     hit_ships += 1
         return hit_ships
 
 
 def RunGame():
+    """
+    This is the main function that runs the game by calling all other fuctions
+    """
     computer_board = The_Board([[" "] * 8 for i in range(8)])
     user_guess_board = The_Board([[" "] * 8 for i in range(8)])
     The_Battleship.create_ships(computer_board)
@@ -111,5 +125,4 @@ def RunGame():
 
 
 if __name__ == '__main__':
-    RunGame() 
-    
+    RunGame()
