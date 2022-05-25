@@ -38,9 +38,10 @@ class The_Battleship:
         creates the ships and positions them on the board
         """
         for i in range(5):
-            # get the row and column then randomize the ships location on the board 
+            # get the row and column then randomize the ships location
             self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
-            # loop will check if a ship has already been placed there. If so will rerandomize
+            # checks if a ship has already been placed there.
+            # If so will rerandomize
             while self.board[self.x_row][self.y_column] == "X":
                 self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
             self.board[self.x_row][self.y_column] = "X"
@@ -48,16 +49,16 @@ class The_Battleship:
 
     def The_user_input(self):
         """
-        The functions get user input (row number and column letter) 
+        The functions get user input (row number and column letter)
         """
         try:
-            x_row = input("Enter the row  of the ship: ")
+            x_row = input("Enter the row  of the ship:\n ")
             # checks for numbers 1 - 8
             while x_row not in '12345678':
                 # If invalid will print:
                 print('inappropriate choice, please select a valid row')
                 # Then ask for x_row input again
-                x_row = input('Enter  the row  of the ships: ')
+                x_row = input('Enter  the row  of the ships:\n ')
 
             y_column = input("Enter the column letter of the ship: ").upper()
             # checks for letters A - H
@@ -65,7 +66,7 @@ class The_Battleship:
                 # If invalid will print:
                 print('inappropriate choice, please select a valid column')
                 # Then ask for y_column input again
-                y_column = input("Enter the column letter of the ships:"
+                y_column = input("Enter the column letter of the ships:\n"
                                  ).upper()
             return int(x_row) - 1, The_Board.get_letters_to_numbers()[y_column]
         except ValueError and KeyError:
@@ -79,7 +80,7 @@ class The_Battleship:
         hit_ships = 0
         # Loops through The_Board
         for row in self.board:
-            # Then loops through column and row 
+            # Then loops through column and row
             for column in row:
                 if column == "X":
                     # if "X" found adds 1 to hit count
@@ -98,7 +99,7 @@ def RunGame():
     turns = 10
     while turns > 0:
         The_Board.print_board(user_guess_board)
-        # The user input 
+        # The user input
         user_x_row, user_y_column = The_Battleship.The_user_input(object)
         # check if duplicate guess
         while user_guess_board.board[user_x_row][user_y_column] == "-" or user_guess_board.board[user_x_row][user_y_column] == "X":
