@@ -1,31 +1,35 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Sink That Ship</h1>
 
-Welcome Themanintheback,
+[view live project here.](https://sink-that-ship.herokuapp.com/)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<h2 align="center"><img src="images/am-i-responsive.png"></h2>
 
-## Reminders
+# User Experience (UX)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+- ## User Stories
 
-## Creating the Heroku app
+    - ### First Time Vistor Goals
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+        1. As a First Time Vistor, I want understand the main purpose of the website.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+        2. As a First Time Vistor, I want be able to understand the rules of the game.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+        3. As a First Time Vistor, I want to enjoy the game and be challanged by the games difficulty.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+        4. As a First Time Vistor, I want all the informtion to be clearly visable on the screen.
+    
+    - ### Returning Vistor Goals
 
-Connect your GitHub repository and deploy as normal.
+        1. As a Returning Vistor, I want to still find the game enjoyable and challanging.
 
-## Constraints
+# How to play
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+Sink That Ship is based on a classic pen and paper styled game.
 
------
-Happy coding!
+The players opponent will be the computer who has randomly placed ships(5) to the board which you have to sink.
+
+The players has 10 turns to sink all ships by before the game ends.
+
+Players guesses are marked on the board as ```-```
+
+Ships hit are marked on the board as ```X```

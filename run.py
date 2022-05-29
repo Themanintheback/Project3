@@ -92,6 +92,11 @@ def RunGame():
     """
     This is the main function that runs the game by calling all other fuctions
     """
+    print("-" * 57)
+    print("Welcome to Sink That Ship.")
+    print("To win the game you have to sink the computers 5 ships.")
+    print("You have 10 turns to do so.")
+    print("-" * 57)
     computer_board = The_Board([[" "] * 8 for i in range(8)])
     user_guess_board = The_Board([[" "] * 8 for i in range(8)])
     The_Battleship.create_ships(computer_board)
