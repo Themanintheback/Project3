@@ -39,17 +39,19 @@ class The_Battleship:
         """
         for i in range(5):
             # get the row and column then randomize the ships location
-            self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
+            self.x_row, self.y_column = random.randint(0, 7
+                                                       ), random.randint(0, 7)
             # checks if a ship has already been placed there.
             # If so will rerandomize
             while self.board[self.x_row][self.y_column] == "X":
-                self.x_row, self.y_column = random.randint(0, 7), random.randint(0, 7)
+                self.x_row, self.y_column = random.randint(0, 7),
+                random.randint(0, 7)
             self.board[self.x_row][self.y_column] = "X"
         return self.board
 
     def The_user_input(self):
         """
-        The functions get user input (row number and column letter)
+        Function get's the user's input (row number and column letter)
         """
         try:
             x_row = input("Enter the row  of the ship:\n ")
